@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "OpsS3WriteOnly",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::frazycorp-ops-logs-2024frazy",
+        "arn:aws:s3:::frazycorp-ops-logs-2024frazy/*"
+      ]
+    }
+  ]
+}
