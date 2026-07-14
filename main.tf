@@ -69,11 +69,11 @@ resource "aws_dynamodb_table" "finance_db" {
 
 # Secrets Manager
 resource "aws_secretsmanager_secret" "db_password" {
-  name = "db-password-v2"
+  name = "db-password-v3"
 }
 
 resource "aws_secretsmanager_secret" "api_key" {
-  name = "api-key-v2"
+  name = "api-key-v3"
 }
 
 # IAM Access Analyzer
@@ -241,4 +241,9 @@ resource "aws_config_config_rule" "root_mfa" {
   }
 
   depends_on = [aws_config_configuration_recorder_status.frazycorp]
+}
+
+resource "aws_s3_bucket" "reports" {
+  bucket        = "frazycorp-weekly-reports-${var.suffix}"
+  force_destroy = true
 }
