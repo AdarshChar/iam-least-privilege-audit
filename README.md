@@ -277,6 +277,8 @@ escalation even if a role is misconfigured
 
 
 ## Project Structure
+
+```
 iam-least-privilege-audit/
 ├── main.tf                          # Root Terraform - all AWS resources
 ├── variables.tf                     # Region and naming variables
@@ -302,4 +304,4 @@ iam-least-privilege-audit/
 │       ├── iam-audit.yml            # PR security gate
 │       └── weekly-report.yml        # Monday cron report
 └── screenshots/                     # Before/after documentation
-
+```
